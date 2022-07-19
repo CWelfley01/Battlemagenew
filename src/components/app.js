@@ -1,0 +1,17 @@
+import React, { Component } from "react";
+import Element from "./element";
+
+export default class App extends Component {
+  render() {
+    return (
+      <div className="app">
+        <div className="title">
+          <h1>BattleMage</h1>
+        </div>
+        <div className="screen">
+          <Element />
+        </div>
+      </div>
+    );
+  }
+}
