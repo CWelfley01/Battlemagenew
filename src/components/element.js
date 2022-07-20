@@ -23,7 +23,7 @@ export default class Element extends Component {
     this.state = {
       element1: {},
       element2: {},
-      combinedElement: 'EmptySpell',
+      combinedElement: {EmptySpell},
       form: {},
     };
 
