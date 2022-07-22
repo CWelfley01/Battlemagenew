@@ -1,11 +1,35 @@
-.hud{
-    display:flex;
+.content-wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    
+  .spellform {
+    .background {
+      height: 1000px;
+      position: absolute;
+      top: 20;
+
+      img {
+        height: 1000px;
+      }
+    }
+    .foreground {
+      position: relative;
+      top: 140px;
+      left: 140px;
+    }
+  }
+
+  .hud {
+    display: flex;
     justify-content: center;
     
-    .mana{
-      img{
-        height:200px;
-        width:190px;
-      }  
+
+    .mana {
+      img {
+        height: 200px;
+        width: 190px;
+      }
     }
+  }
 }

@@ -19,10 +19,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
+    background-color: black;
 }
 
 .app {
     margin-top: 2rem;
     display: grid;
     justify-items: center;
+    color: white;
+    font-size: 2.5rem;
 }
