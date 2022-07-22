@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Element from "./element";
+import Hud from "./hud.js";
 
 export default class App extends Component {
   render() {
@@ -9,7 +10,7 @@ export default class App extends Component {
           <h1>BattleMage</h1>
         </div>
         <div className="screen">
-          <Element />
+          <Hud />
         </div>
       </div>
     );

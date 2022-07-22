@@ -9,6 +9,7 @@ import {
   airSpells,
   earthSpells,
 } from "./spell-library.js";
+import Fireball from "./fire.js";
 
 export default class Element extends Component {
   constructor(props) {
@@ -23,13 +24,13 @@ export default class Element extends Component {
     this.state = {
       element1: {},
       element2: {},
-      combinedElement: {EmptySpell},
+      combinedElement: {},
       form: {},
     };
 
-    // this.fillElement = this.fillElement.bind(this);
-    // this.combineElement = this.combineElement.bind(this);
-    // this.spellCaller = this.spellCaller.bind(this);
+    this.setElement = this.setElement.bind(this);
+    this.combineElement = this.combineElement.bind(this);
+    this.spellCaller = this.spellCaller.bind(this);
   }
 
   setElement() {
@@ -52,16 +53,16 @@ export default class Element extends Component {
   render() {
     return
     <div className="hud">
-      <div className="spellform">
-        <h1>{this.state.combinedElement}</h1>
+      <div className="spell" >
+        <Fireball />
         <h1>{form}</h1>
       </div>
 
       <div className="mana">
-        <button onClick={this.setElement(this.innerText)}>Fire Mana</button>
-        <button onClick={this.setElement(this.innerText)}>Water Mana</button>
-        <button onClick={this.setElement(this.innerText)}>Air Mana</button>
-        <button onClick={this.setElement(this.innerText)}>Earth Mana</button>
+        <button >Fire Mana</button>
+        <button >Water Mana</button>
+        <button >Air Mana</button>
+        <button >Earth Mana</button>
       </div>
     </div>
   };
