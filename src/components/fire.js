@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-export default function Fireball() {
+import fireicon from "../../static/assets/images/fireicon.png";
+
+export default function Fire() {
   return (
     <div>
-        <img src='../../static/assets/images/icons8-fire-48.png' />
+        <img src={fireicon} />
     </div>
   )
 }

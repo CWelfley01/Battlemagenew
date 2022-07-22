@@ -1,42 +1,43 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import styles from "../style/hud.scss";
 
-import Scroll from '../../static/assets/images/blank-scroll-png.png'
-import EmptySpell from '../../static/assets/images/emptySpellForm.png'
-import Fire from '../../static/assets/images/icons8-fire-48.png';
-import Water from '../../static/assets/images/icons8-water-48.png';
-import Air from '../../static/assets/images/icons8-wind-16.png';
-import Earth from '../../static/assets/images/icons8-rock-48.png';
+import Scroll from "../../static/assets/images/blank-scroll-png.png";
+import EmptySpell from "../../static/assets/images/emptySpellForm.png";
+import Fire from "./fire.js";
+import Water from "./water.js";
+import Air from "./air.js";
+import Earth from "./earth.js";
 
 export default class Hud extends Component {
   render() {
     return (
       <div className="hud">
-      <div className="spellform">
-        <img src={Scroll} />
-      </div>
+        <div className="background">
+          <img src={Scroll} />
+        </div>
+        <div className="spellform">
+          <img src={EmptySpell} />
+        </div>
 
-      <div className="mana">
-        <button >
-          <img src={Fire} />
-          Fire Mana
-        </button>
-        <button >
-          <img src={Water} />Water Mana</button>
-        <button >
-          <img src={Air} />Air Mana</button>
-        <button >
-          <img src={Earth} />Earth Mana</button>
+        <div className="mana">
+          <button>
+            <Fire />
+            
+          </button>
+          <button>
+            <Water />
+            
+          </button>
+          <button>
+            <Air />
+            
+          </button>
+          <button>
+            <Earth />
+            
+          </button>
+        </div>
       </div>
-    </div>
-    )
+    );
   }
 }
-
-
-
-
-
-
-
-
-
