@@ -11,31 +11,30 @@ import Earth from "./earth.js";
 export default class Hud extends Component {
   render() {
     return (
-      <div className="hud">
+      <div>
         <div className="background">
           <img src={Scroll} />
         </div>
-        <div className="spellform">
-          <img src={EmptySpell} />
-        </div>
 
-        <div className="mana">
-          <button>
-            <Fire />
-            
-          </button>
-          <button>
-            <Water />
-            
-          </button>
-          <button>
-            <Air />
-            
-          </button>
-          <button>
-            <Earth />
-            
-          </button>
+        <div className="hud">
+          <div className="spellform">
+            <img src={EmptySpell} />
+          </div>
+
+          <div className="mana">
+            <button>
+              <Fire />
+            </button>
+            <button>
+              <Water />
+            </button>
+            <button>
+              <Air />
+            </button>
+            <button>
+              <Earth />
+            </button>
+          </div>
         </div>
       </div>
     );
