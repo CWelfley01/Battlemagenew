@@ -36,7 +36,7 @@ export default function addSpell() {
   return (
     <div className="add-spell">
       <h1 className="add-spell-title">Enter a books data!</h1>
-      <form className="add-spell-form" onSubmit={postBook}>
+      <form className="add-spell-form" onSubmit={postSpell}>
         <input
           value={spellname}
           className="add-spell-form-input"
