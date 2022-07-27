@@ -18,7 +18,7 @@ export default function addSpell() {
 
   const postSpell = (event) => {
     axios
-      .post("http://localhost:5000/spell/add", {
+      .post("http://localhost:5000/add-spell", {
         spellname: spellname,
         attackmod: attackmod,
         defencemod: defencemod,
