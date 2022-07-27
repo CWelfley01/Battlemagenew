@@ -42,7 +42,7 @@ spells_schema = SpellSchema(many=True)
 
 @app.route("/add-spell", methods=["POST"])
 def add_spell():
-    spell = request.json.get("spell")
+    spellname = request.json.get("spellname")
     description = request.json.get("description")
     attackmod = request.json.get("attackmod")
     defencemod = request.json.get("defencemod")
