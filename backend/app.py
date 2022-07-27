@@ -40,6 +40,22 @@ class SpellSchema(ma.Schema):
 spell_schema = SpellSchema()
 spells_schema = SpellSchema(many=True)
 
+@app.route("/add-spell", methods=["POST"])
+def add_spell():
+    spell = request.json.get("spell")
+    description = request.json.get("description")
+    attackmod = request.json.get("attackmod")
+    defencemod = request.json.get("defencemod")
+    specialeffect = request.json.get("specialeffect")
+    
+
+    record = Spells(spellname, description, attackmod, defencemod, specialeffect)
+    
+    db.session.add(record)
+    db.session.commit()
+
+    return jsonify(spell_schema.dump(record))
+
 
 @app.route("/spells", methods=["GET"])
 def get_all_spells():
