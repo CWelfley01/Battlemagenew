@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import axios from "axios";
 
 export default function addSpell() {
-  const [name, setSpellname] = useState("");
-  const [author, setAttackmod] = useState("");
-  const [price, setDefencemod] = useState("");
+  const [spellname, setSpellName] = useState("");
+  const [attackmod, setAttackMod] = useState("");
+  const [defencemod, setDefenceMod] = useState("");
+  const [specialeffect, setSpecialEffect] = useState("");
   const [description, setDescription] = useState("");
-  const [specialeffect, setSpecialeffect] = useState("");
 
   const clearState = () => {
-    setSpellname("");
-    setAttackmod("");
-    setDefencemod("");
+    setSpellName("");
+    setAttackMod("");
+    setDefenceMod("");
+    setSpecialEffect("");
     setDescription("");
-    setSpecialeffect("");
   };
 
   const postSpell = (event) => {
@@ -22,8 +22,8 @@ export default function addSpell() {
         spellname: spellname,
         attackmod: attackmod,
         defencemod: defencemod,
-        description: description,
         specialeffect: specialeffect,
+        description: description,
       },{
         headers: { "Access-Control-Allow-Origin": "*" },
       })
@@ -35,44 +35,44 @@ export default function addSpell() {
 
   return (
     <div className="add-spell">
-      <h1 className="add-spell-title">Enter a spell</h1>
-      <form className="add-spell-form" onSubmit={postSpell}>
+      <h1 className="add-spell-title">Enter a books data!</h1>
+      <form className="add-spell-form" onSubmit={postBook}>
         <input
           value={spellname}
           className="add-spell-form-input"
-          onChange={(event) => setSpellname(event.target.value)}
+          onChange={(event) => setSpellName(event.target.value)}
           type="text"
           placeholder="spellname"
         />
         <input
           value={attackmod}
           className="add-spell-form-input"
-          onChange={(event) => setAttackmod(event.target.value)}
+          onChange={(event) => setAttackMod(event.target.value)}
           type="number"
-          placeholder="attackmod"
+          placeholder="Attack Modifier"
         />
         <input
           value={defencemod}
           className="add-spell-form-input"
-          onChange={(event) => setDefencemod(event.target.value)}
+          onChange={(event) => setDefenceMod(event.target.value)}
           type="number"
-          placeholder="defencemod"
+          placeholder="Defence Modifier"
         />
         <input
           value={specialeffect}
           className="add-spell-form-input"
-          onChange={(event) => setSpecialeffect(event.target.value)}
-          type="number"
-          placeholder="specialeffect"
+          onChange={(event) => setSpecialEffect(event.target.value)}
+          type="text"
+          placeholder="Special Effect"
         />
         <textarea
           value={description}
-          className="add-book-form-textarea"
+          className="add-spell-form-textarea"
           onChange={(event) => setDescription(event.target.value)}
           type="text"
           placeholder="description"
         />
-        <button className="add-book-form-button">Add book!</button>
+        <button className="add-spell-form-button">Add spell!</button>
       </form>
     </div>
   );
