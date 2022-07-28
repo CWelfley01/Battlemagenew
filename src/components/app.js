@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Navbar from "../components/NavBar";
-import Element from "./element";
+
 import Hud from "./hud.js";
 
 export default class App extends Component {

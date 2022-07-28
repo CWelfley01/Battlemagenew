@@ -16,8 +16,7 @@ function main() {
   ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
-        <Navbar />
-        <Switch>
+       <Switch>
           <Route exact path="/">
             <App />
           </Route>
