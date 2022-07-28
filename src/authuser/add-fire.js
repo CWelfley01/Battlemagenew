@@ -18,7 +18,7 @@ export default function addFireElement() {
 
   const postFireElement = (event) => {
     axios
-      .post("http://localhost:5000/add-spell", {
+      .post("http://localhost:5000/add-FireElement", {
         blank: blank,
         water: water,
         air: air,
@@ -35,8 +35,8 @@ export default function addFireElement() {
 
   return (
     <div className="add-spell">
-      <h1 className="add-spell-title">Enter a books data!</h1>
-      <form className="add-spell-form" onSubmit={postSpell}>
+      <h1 className="add-spell-title">Enter an elements data!</h1>
+      <form className="add-spell-form" onSubmit={postFireElement}>
         <input
           value={blank}
           className="add-spell-form-input"
@@ -48,14 +48,14 @@ export default function addFireElement() {
           value={water}
           className="add-spell-form-input"
           onChange={(event) => setWater(event.target.value)}
-          type="number"
+          type="text"
           placeholder="Water"
         />
         <input
           value={air}
           className="add-spell-form-input"
           onChange={(event) => setAir(event.target.value)}
-          type="number"
+          type="text"
           placeholder="Air"
         />
         <input
@@ -65,7 +65,7 @@ export default function addFireElement() {
           type="text"
           placeholder="Earth"
         />
-        <button className="add-spell-form-button">Add spell!</button>
+        <button className="add-spell-form-button">Add element!</button>
       </form>
     </div>
   );

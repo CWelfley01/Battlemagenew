@@ -6,7 +6,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import App from "./components/app";
 import reducers from "./reducers";
 import AddSpell from "./authuser/add-spell";
+import AddFireElement from "./authuser/add-fire";
 import Navbar from "./components/NavBar";
+
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -22,6 +24,9 @@ function main() {
           </Route>
           <Route path="/add-spell">
             <AddSpell />
+          </Route>
+          <Route path="/add-FireElement">
+            <AddFireElement />
           </Route>
         </Switch>
       </BrowserRouter>

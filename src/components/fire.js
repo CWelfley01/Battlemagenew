@@ -16,7 +16,7 @@ export default function Fire(props) {
   return (
     <div>
       <img className="mana-icon" src={fireicon} />
-      <button ></button>
+     
     </div>
   );
 }
