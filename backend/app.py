@@ -43,12 +43,13 @@ spells_schema = SpellSchema(many=True)
 # FIRE TABLE
 class FireElement(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    null = db.Column(db.String, nullable=False)
+    blank = db.Column(db.String, nullable=False)
     water = db.Column(db.String, nullable=False)
     air = db.Column(db.String, nullable=False)
     earth = db.Column(db.String, nullable=False)
 
-def __init__(self, null, water, air, earth):
+def __init__(self, blank, water, air, earth):
+    self.blank = blank
     self.water = water
     self.air = air
     self.earth = earth
@@ -56,7 +57,7 @@ def __init__(self, null, water, air, earth):
 
 class FireElementSchema(ma.Schema):
     class Meta:
-        fields = ("id", "null", "water", "air", "earth")
+        fields = ("id", "blank", "water", "air", "earth")
 
 FireElement_schema = FireElementSchema()
 FireElements_schema = FireElementSchema(many=True)
@@ -64,12 +65,13 @@ FireElements_schema = FireElementSchema(many=True)
 # water table
 class WaterElement(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    null = db.Column(db.String, nullable=False)
+    blank = db.Column(db.String, nullable=False)
     fire = db.Column(db.String, nullable=False)
     air = db.Column(db.String, nullable=False)
     earth = db.Column(db.String, nullable=False)
 
-def __init__(self, null, fire, air, earth):
+def __init__(self, blank, fire, air, earth):
+    self.blank = blank
     self.fire = fire
     self.air = air
     self.earth = earth
@@ -77,19 +79,20 @@ def __init__(self, null, fire, air, earth):
 
 class WaterElementSchema(ma.Schema):
     class Meta:
-        fields = ("id", "null", "fire", "air", "earth")
+        fields = ("id", "blank", "fire", "air", "earth")
 
 WaterElement_schema = WaterElementSchema()
 WaterElements_schema = WaterElementSchema(many=True)
 # Air Table
 class AirElement(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    null = db.Column(db.String, nullable=False)
+    blank = db.Column(db.String, nullable=False)
     fire = db.Column(db.String, nullable=False)
     water = db.Column(db.String, nullable=False)
     earth = db.Column(db.String, nullable=False)
 
-def __init__(self, null, fire, water, earth):
+def __init__(self, blank, fire, water, earth):
+    self.blank = blank
     self.fire = fire
     self.water = water
     self.earth = earth
@@ -97,7 +100,7 @@ def __init__(self, null, fire, water, earth):
 
 class AirElementSchema(ma.Schema):
     class Meta:
-        fields = ("id", "null", "fire", "water", "earth")
+        fields = ("id", "blank", "fire", "water", "earth")
 
 AirElement_schema = AirElementSchema()
 AirElements_schema = AirElementSchema(many=True)
@@ -105,12 +108,13 @@ AirElements_schema = AirElementSchema(many=True)
 # Earth table
 class EarthElement(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    null = db.Column(db.String, nullable=False)
+    blank = db.Column(db.String, nullable=False)
     fire = db.Column(db.String, nullable=False)
     water = db.Column(db.String, nullable=False)
     air = db.Column(db.String, nullable=False)
 
-def __init__(self, null, fire, water, air):
+def __init__(self, blank, fire, water, air):
+    self.blank = blank
     self.fire = fire
     self.water = water
     self.air = air
@@ -118,7 +122,7 @@ def __init__(self, null, fire, water, air):
 
 class EarthElementSchema(ma.Schema):
     class Meta:
-        fields = ("id", "null", "fire", "water", "air")
+        fields = ("id", "blank", "fire", "water", "air")
 
 EarthElement_schema = EarthElementSchema()
 EarthElements_schema = EarthElementSchema(many=True)
@@ -168,14 +172,14 @@ def add_spell():
 
 @app.route("/add-FireElement", methods=["POST"])
 def add_FireElement():
-    null = request.json.get("null")
+    blank = request.json.get("blank")
     water = request.json.get("water")
     air = request.json.get("air")
     earth = request.json.get("earth")
     
     
 
-    record = FireElement(water, air, earth)
+    record = FireElement(blank, water, air, earth)
     
     db.session.add(record)
     db.session.commit()
@@ -185,14 +189,14 @@ def add_FireElement():
 
 @app.route("/add-WaterElement", methods=["POST"])
 def add_WaterElement():
-    null = request.json.get("null")
+    blank = request.json.get("blank")
     fire = request.json.get("fire")
     air = request.json.get("air")
     earth = request.json.get("earth")
     
     
 
-    record = WaterElement(fire, air, earth)
+    record = WaterElement(blank, fire, air, earth)
     
     db.session.add(record)
     db.session.commit()
@@ -201,7 +205,7 @@ def add_WaterElement():
 
 @app.route("/add-AirElement", methods=["POST"])
 def add_AirElement():
-    null = request.json.get("null")
+    blank = request.json.get("blank")
     fire = request.json.get("fire")
     water = request.json.get("water")
     earth = request.json.get("earth")
@@ -217,14 +221,14 @@ def add_AirElement():
 
 @app.route("/add-EarthElement", methods=["POST"])
 def add_EarthElement():
-    null = request.json.get("null")
+    blank = request.json.get("blank")
     fire = request.json.get("fire")
     water = request.json.get("water")
     air = request.json.get("air")
     
     
 
-    record = EarthElement(fire, water, air)
+    record = EarthElement(blank, fire, water, air)
     
     db.session.add(record)
     db.session.commit()
