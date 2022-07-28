@@ -8,6 +8,8 @@ import Fire from "./fire.js";
 import Water from "./water.js";
 import Air from "./air.js";
 import Earth from "./earth.js";
+import {Shot, Beam, Wall, Clear} from "./form.js";
+
 
 export default class Hud extends Component {
   render() {
@@ -16,7 +18,7 @@ export default class Hud extends Component {
         <div className="spellform">
           <div className="background">
             <img src={Scroll} />
-            
+
           </div>
           <div className="foreground">
             
@@ -35,6 +37,20 @@ export default class Hud extends Component {
             </button>
             <button>
               <Earth />
+            </button>
+          </div>
+          <div className="form">
+            <button>
+              <Shot />
+            </button>
+            <button>
+              <Beam />
+            </button>
+            <button>
+              <Wall />
+            </button>
+            <button>
+              <Clear />
             </button>
           </div>
         </div>

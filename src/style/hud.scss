@@ -21,10 +21,23 @@
     justify-content: center;
 
     .mana {
+      display: grid;
+      height: 200px;
+      width: 190px;
       img {
         height: 200px;
         width: 190px;
       }
+    }
+    .form{
+      display: grid;
+      height: 200px;
+      width: 190px;
+      img {
+        height: 200px;
+        width: 190px;
+      }
+
     }
   }
 }
