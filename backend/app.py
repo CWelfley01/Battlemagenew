@@ -212,7 +212,7 @@ def add_AirElement():
     
     
 
-    record = AirElement(fire, water, earth)
+    record = AirElement(blank, fire, water, earth)
     
     db.session.add(record)
     db.session.commit()
