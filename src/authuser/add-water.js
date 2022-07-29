@@ -45,7 +45,7 @@ export default function addWaterElement() {
           placeholder="Blank"
         />
         <input
-          value={water}
+          value={fire}
           className="add-spell-form-input"
           onChange={(event) => setFire(event.target.value)}
           type="text"

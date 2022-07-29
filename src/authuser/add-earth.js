@@ -45,21 +45,21 @@ export default function addEarthElement() {
           placeholder="Blank"
         />
         <input
-          value={water}
+          value={fire}
           className="add-spell-form-input"
           onChange={(event) => setFire(event.target.value)}
           type="text"
           placeholder="Fire"
         />
         <input
-          value={air}
+          value={water}
           className="add-spell-form-input"
           onChange={(event) => setWater(event.target.value)}
           type="text"
           placeholder="Water"
         />
         <input
-          value={earth}
+          value={air}
           className="add-spell-form-input"
           onChange={(event) => setAir(event.target.value)}
           type="text"

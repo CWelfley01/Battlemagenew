@@ -8,7 +8,8 @@ export default function NavBar() {
       <Link to="/">Battle Page</Link>
       <Link to="/add-FireElement">add FIRE element</Link>
       <Link to="/add-WaterElement">add WATER element</Link>
-      <Link to="/add-AirElement">add AIR element</Link>       
+      <Link to="/add-AirElement">add AIR element</Link>
+      <Link to="/add-EarthElement">add EARTH element</Link>       
       <Link to="/add-spell">Add a Spell!</Link>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function addWaterElement() {
+export default function addAirElement() {
   const [blank, setBlank] = useState("");
   const [fire, setFire] = useState("");
   const [water, setWater] = useState("");
@@ -21,7 +21,7 @@ export default function addWaterElement() {
       .post("http://localhost:5000/add-AirElement", {
         blank: blank,
         fire: fire,
-        Water: Water,
+        water: water,
         earth: earth,
         
       },{
@@ -45,14 +45,14 @@ export default function addWaterElement() {
           placeholder="Blank"
         />
         <input
-          value={water}
+          value={fire}
           className="add-spell-form-input"
           onChange={(event) => setFire(event.target.value)}
           type="text"
           placeholder="Fire"
         />
         <input
-          value={air}
+          value={water}
           className="add-spell-form-input"
           onChange={(event) => setWater(event.target.value)}
           type="text"
