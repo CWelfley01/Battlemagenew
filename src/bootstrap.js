@@ -10,6 +10,7 @@ import AddFireElement from "./authuser/add-fire";
 import AddWaterElement from "./authuser/add-water";
 import AddAirElement from "./authuser/add-air";
 import AddEarthElement from "./authuser/add-earth";
+import AddFormElement from "./authuser/add-form";
 import Navbar from "./components/NavBar";
 
 
@@ -39,6 +40,9 @@ function main() {
           </Route>
           <Route path="/add-EarthElement">
             <AddEarthElement />
+          </Route>
+          <Route path="/add-FormElement">
+            <AddFormElement />
           </Route>
         </Switch>
       </BrowserRouter>

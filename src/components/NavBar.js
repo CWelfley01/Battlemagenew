@@ -10,6 +10,7 @@ export default function NavBar() {
       <Link to="/add-WaterElement">add WATER element</Link>
       <Link to="/add-AirElement">add AIR element</Link>
       <Link to="/add-EarthElement">add EARTH element</Link>       
+      <Link to="/add-FormElement">add FORM element</Link>
       <Link to="/add-spell">Add a Spell!</Link>
     </div>
   );
