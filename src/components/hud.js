@@ -17,7 +17,8 @@ export default class Hud extends Component {
       <div className="content-wrapper">
         <div className="spellform">
           <div className="background">
-            <img src={Scroll} />
+            <img src={Scroll} className="dead"/>
+            <img src={PoweredScroll} className="live" />
 
           </div>
           <div className="foreground">
