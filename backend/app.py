@@ -48,11 +48,11 @@ class FireElement(db.Model):
     air = db.Column(db.String, nullable=False)
     earth = db.Column(db.String, nullable=False)
 
-def __init__(self, blank, water, air, earth):
-    self.blank = blank
-    self.water = water
-    self.air = air
-    self.earth = earth
+    def __init__(self, blank, water, air, earth):
+        self.blank = blank
+        self.water = water
+        self.air = air
+        self.earth = earth
         
 
 class FireElementSchema(ma.Schema):
@@ -70,11 +70,11 @@ class WaterElement(db.Model):
     air = db.Column(db.String, nullable=False)
     earth = db.Column(db.String, nullable=False)
 
-def __init__(self, blank, fire, air, earth):
-    self.blank = blank
-    self.fire = fire
-    self.air = air
-    self.earth = earth
+    def __init__(self, blank, fire, air, earth):
+        self.blank = blank
+        self.fire = fire
+        self.air = air
+        self.earth = earth
         
 
 class WaterElementSchema(ma.Schema):
@@ -91,11 +91,11 @@ class AirElement(db.Model):
     water = db.Column(db.String, nullable=False)
     earth = db.Column(db.String, nullable=False)
 
-def __init__(self, blank, fire, water, earth):
-    self.blank = blank
-    self.fire = fire
-    self.water = water
-    self.earth = earth
+    def __init__(self, blank, fire, water, earth):
+        self.blank = blank
+        self.fire = fire
+        self.water = water
+        self.earth = earth
         
 
 class AirElementSchema(ma.Schema):
@@ -113,11 +113,11 @@ class EarthElement(db.Model):
     water = db.Column(db.String, nullable=False)
     air = db.Column(db.String, nullable=False)
 
-def __init__(self, blank, fire, water, air):
-    self.blank = blank
-    self.fire = fire
-    self.water = water
-    self.air = air
+    def __init__(self, blank, fire, water, air):
+        self.blank = blank
+        self.fire = fire
+        self.water = water
+        self.air = air
         
 
 class EarthElementSchema(ma.Schema):
@@ -135,11 +135,11 @@ class FormElement(db.Model):
     beam = db.Column(db.String, nullable=False)
     wall = db.Column(db.String, nullable=False)
 
-def __init__(self, element, shot, beam, wall):
-    self.element = element
-    self.shot = shot
-    self.beam = beam
-    self.wall = wall
+    def __init__(self, element, shot, beam, wall):
+        self.element = element
+        self.shot = shot
+        self.beam = beam
+        self.wall = wall
         
 
 class FormElementSchema(ma.Schema):

@@ -1,29 +1,29 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function addSpell() {
-  const [spellname, setSpellName] = useState("");
-  const [attackmod, setAttackMod] = useState("");
-  const [defencemod, setDefenceMod] = useState("");
-  const [specialeffect, setSpecialEffect] = useState("");
-  const [description, setDescription] = useState("");
+export default function addWaterElement() {
+  const [blank, setBlank] = useState("");
+  const [fire, setFire] = useState("");
+  const [air, setAir] = useState("");
+  const [earth, setEarth] = useState("");
+  
 
   const clearState = () => {
-    setSpellName("");
-    setAttackMod("");
-    setDefenceMod("");
-    setSpecialEffect("");
-    setDescription("");
+    setBlank("");
+    setFire("");
+    setAir("");
+    setEarth("");
+    
   };
 
-  const postSpell = (event) => {
+  const postWaterElement = (event) => {
     axios
-      .post("http://localhost:5000/add-spell", {
-        spellname: spellname,
-        attackmod: attackmod,
-        defencemod: defencemod,
-        specialeffect: specialeffect,
-        description: description,
+      .post("http://localhost:5000/add-WaterElement", {
+        blank: blank,
+        fire: fire,
+        air: air,
+        earth: earth,
+        
       },{
         headers: { "Access-Control-Allow-Origin": "*" },
       })
@@ -35,44 +35,37 @@ export default function addSpell() {
 
   return (
     <div className="add-spell">
-      <h1 className="add-spell-title">Enter a books data!</h1>
-      <form className="add-spell-form" onSubmit={postSpell}>
+      <h1 className="add-spell-title">Enter an elements data!</h1>
+      <form className="add-spell-form" onSubmit={postWaterElement}>
         <input
-          value={spellname}
+          value={blank}
           className="add-spell-form-input"
-          onChange={(event) => setSpellName(event.target.value)}
+          onChange={(event) => setBlank(event.target.value)}
           type="text"
-          placeholder="spellname"
+          placeholder="Blank"
         />
         <input
-          value={attackmod}
+          value={water}
           className="add-spell-form-input"
-          onChange={(event) => setAttackMod(event.target.value)}
-          type="number"
-          placeholder="Attack Modifier"
-        />
-        <input
-          value={defencemod}
-          className="add-spell-form-input"
-          onChange={(event) => setDefenceMod(event.target.value)}
-          type="number"
-          placeholder="Defence Modifier"
-        />
-        <input
-          value={specialeffect}
-          className="add-spell-form-input"
-          onChange={(event) => setSpecialEffect(event.target.value)}
+          onChange={(event) => setFire(event.target.value)}
           type="text"
-          placeholder="Special Effect"
+          placeholder="Fire"
         />
-        <textarea
-          value={description}
-          className="add-spell-form-textarea"
-          onChange={(event) => setDescription(event.target.value)}
+        <input
+          value={air}
+          className="add-spell-form-input"
+          onChange={(event) => setAir(event.target.value)}
           type="text"
-          placeholder="description"
+          placeholder="Air"
         />
-        <button className="add-spell-form-button">Add spell!</button>
+        <input
+          value={earth}
+          className="add-spell-form-input"
+          onChange={(event) => setEarth(event.target.value)}
+          type="text"
+          placeholder="Earth"
+        />
+        <button className="add-spell-form-button">Add element!</button>
       </form>
     </div>
   );
