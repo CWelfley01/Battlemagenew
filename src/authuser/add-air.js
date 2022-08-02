@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import Banner from "../../static/assets/images/air-banner.png";
+
 export default function addAirElement() {
   const [blank, setBlank] = useState("");
   const [fire, setFire] = useState("");
@@ -35,6 +37,8 @@ export default function addAirElement() {
 
   return (
     <div className="add-spell">
+      <img className="banner" src={Banner} />
+      <div className="add-spell-page">
       <h1 className="add-spell-title">Enter an elements data!</h1>
       <form className="add-spell-form" onSubmit={postAirElement}>
         <input
@@ -67,6 +71,7 @@ export default function addAirElement() {
         />
         <button className="add-spell-form-button">Add element!</button>
       </form>
+    </div>
     </div>
   );
 }

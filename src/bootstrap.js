@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import styles from "./style/navbar.scss";
+
 import App from "./components/app";
 import reducers from "./reducers";
 import AddSpell from "./authuser/add-spell";
@@ -13,7 +15,6 @@ import AddEarthElement from "./authuser/add-earth";
 import AddFormElement from "./authuser/add-form";
 import Navbar from "./components/NavBar";
 
-
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 import "./style/main.scss";
@@ -22,7 +23,10 @@ function main() {
   ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
-       <Switch>
+        <div className="navbar">
+          <Navbar />
+        </div>
+        <Switch>
           <Route exact path="/">
             <App />
           </Route>
