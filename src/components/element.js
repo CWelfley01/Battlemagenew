@@ -1,26 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import Hud from "./hud.js";
-import emptySpellForm from "../../static/assets/images/emptySpellForm.png";
-import {
-  fireSpells,
-  waterSpells,
-  airSpells,
-  earthSpells,
-} from "./spell-library.js";
-import Fireball from "./fire.js";
+
+
 
 export default class Element extends Component {
   constructor(props) {
     super(props);
 
-    const Fire = fireSpells;
-    const Water = waterSpells;
-    const Air = airSpells;
-    const Earth = earthSpells;
-    const EmptySpell = emptySpellForm;
-
+    
     this.state = {
       element1: {},
       element2: {},
@@ -32,6 +20,23 @@ export default class Element extends Component {
     this.combineElement = this.combineElement.bind(this);
     this.spellCaller = this.spellCaller.bind(this);
   }
+
+  setFireMana(){
+    this.setState({element1:"Fire"})
+  }
+
+  setWaterMana(){
+    this.setState({element1:"Water"})
+  }
+
+  setAirMana(){
+    this.setState({element1:"Air"})
+  }
+
+  setEarthMana(){
+    this.setState({element1:"Earth"})
+  }
+
 
   setElement() {
     if (this.state.element1 ? this.setState.element2 : this.setState.element1);
@@ -54,7 +59,7 @@ export default class Element extends Component {
     return
     <div className="hud">
       <div className="spell" >
-        <Fireball />
+        
         <h1>{form}</h1>
       </div>
 
