@@ -18,38 +18,11 @@ export default function NavBar() {
         <NavLink
           className="navbar-link"
           activeClassName="selected"
-          to="/add-Element"
+          to="/add-Elements"
         >
           Add Element
         </NavLink>
-        <NavLink
-          className="navbar-link"
-          activeClassName="selected"
-          to="/add-FireElement"
-        >
-          Add FIRE Element
-        </NavLink>
-        <NavLink
-          className="navbar-link"
-          activeClassName="selected"
-          to="/add-WaterElement"
-        >
-          Add WATER Element
-        </NavLink>
-        <NavLink
-          className="navbar-link"
-          activeClassName="selected"
-          to="/add-AirElement"
-        >
-          Add AIR Element
-        </NavLink>
-        <NavLink
-          className="navbar-link"
-          activeClassName="selected"
-          to="/add-EarthElement"
-        >
-          Add EARTH Element
-        </NavLink>
+        
         <NavLink
           className="navbar-link"
           activeClassName="selected"

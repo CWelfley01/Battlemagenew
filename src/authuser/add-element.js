@@ -3,6 +3,7 @@ import axios from "axios";
 
 import Banner from "../../static/assets/images/fire-banner.png";
 import NavBar from "../components/NavBar";
+import GetElements from "../components/get-elements";
 
 export default function addElement() {
   const [Main, setMain] = useState("");
@@ -19,10 +20,12 @@ export default function addElement() {
     setEarth("");
   };
 
+
+
   const postElement = (event) => {
     axios
       .post(
-        "http://localhost:5000/add-Element",
+        "http://localhost:5000/add-Elements",
         {
           Main: Main,
           Fire: Fire,
@@ -31,8 +34,8 @@ export default function addElement() {
           Earth: Earth,
         },
         {
-          headers: { "Access-Control-Allow-Origin": "*" },
-        }
+            headers: { "Access-Control-Allow-Origin": "*" },
+          }
       )
       .then((response) => console.log(response))
       .catch((error) => console.error(error));
@@ -84,8 +87,11 @@ export default function addElement() {
             />
             <button className="add-spell-form-button">Add element!</button>
           </form>
+          
         </div>
       </div>
+      <GetElements />
     </div>
+    
   );
 }

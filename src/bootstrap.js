@@ -34,20 +34,8 @@ function main() {
           <Route path="/add-spell">
             <AddSpell />
           </Route>
-          <Route path="/add-Element">
+          <Route path="/add-Elements">
             <AddElement />
-          </Route>
-          <Route path="/add-FireElement">
-            <AddFireElement />
-          </Route>
-          <Route path="/add-WaterElement">
-            <AddWaterElement />
-          </Route>
-          <Route path="/add-AirElement">
-            <AddAirElement />
-          </Route>
-          <Route path="/add-EarthElement">
-            <AddEarthElement />
           </Route>
           <Route path="/add-FormElement">
             <AddFormElement />

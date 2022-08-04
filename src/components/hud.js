@@ -37,7 +37,7 @@ export default class Hud extends Component {
 
   setFireMana = () => {
     if (this.state.element1 == "blank") {
-      this.setState({ element1: "FireElement" });
+      this.setState({ element1: "Fire" });
     } else {
       this.setState({ element2: "fire" });
     }
