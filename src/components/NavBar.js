@@ -18,6 +18,13 @@ export default function NavBar() {
         <NavLink
           className="navbar-link"
           activeClassName="selected"
+          to="/add-Element"
+        >
+          Add Element
+        </NavLink>
+        <NavLink
+          className="navbar-link"
+          activeClassName="selected"
           to="/add-FireElement"
         >
           Add FIRE Element
