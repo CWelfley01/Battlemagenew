@@ -40,6 +40,30 @@ class SpellSchema(ma.Schema):
 spell_schema = SpellSchema()
 spells_schema = SpellSchema(many=True)
 
+# Element Table
+class Element(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    Main = db.Column(db.String, nullable=False)
+    Fire = db.Column(db.String, nullable=False)
+    Water = db.Column(db.String, nullable=False)
+    Air = db.Column(db.String, nullable=False)
+    Earth = db.Column(db.String, nullable=False)
+    
+    def __init__(self, Main, Fire, Water, Air, Earth):
+        self.Main = Main
+        self.Fire = Fire
+        self.Water = Water
+        self.Air = Air
+        self.Earth = Earth
+        
+class ElementSchema(ma.Schema):
+    class Meta:
+        fields = ("id", "Main","Fire", "Water", "Air", "Earth")
+
+Element_schema = ElementSchema()
+Elements_schema = ElementSchema(many=True)
+        
+
 # FIRE TABLE
 class FireElement(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -251,6 +275,12 @@ def add_FormElement():
 
     return jsonify(FormElement_schema.dump(record))
 
+@app.route("/<table>/<column>")
+def get_a_spell(table, column):
+    returned_element = table.query.get(column) 
+    return spell_schema.jsonify(returned_spell)
+    
+    
 @app.route("/spells", methods=["GET"])
 def get_all_spells():
     all_spells = Spells.query.all()

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styles from "../style/hud.scss";
+import axios from "axios";
 
 import Scroll from "../../static/assets/images/emptySpellForm.png";
 import PoweredScroll from "../../static/assets/images/poweredSpellForm.png";
@@ -8,7 +9,10 @@ import fireicon from "../../static/assets/images/fireicon.png";
 import watericon from "../../static/assets/images/watericon.png";
 import airicon from "../../static/assets/images/airicon.png";
 import earthicon from "../../static/assets/images/earthicon.png";
-import { Shot, Beam, Wall, Clear } from "./form.js";
+import shot from "../../static/assets/images/shot.png";
+import beam from "../../static/assets/images/beam.png";
+import wall from "../../static/assets/images/wall.png";
+import clear from "../../static/assets/images/clear.png";
 
 export default class Hud extends Component {
   constructor(props) {
@@ -25,27 +29,80 @@ export default class Hud extends Component {
     this.setWaterMana = this.setWaterMana.bind(this);
     this.setAirMana = this.setAirMana.bind(this);
     this.setEarthMana = this.setEarthMana.bind(this);
+    this.setShotForm = this.setShotForm.bind(this);
+    this.setBeamForm = this.setBeamForm.bind(this);
+    this.setWallForm = this.setWallForm.bind(this);
+    this.combineElements = this.combineElements.bind(this);
   }
 
-  setFireMana() {
-    console.log(this.state.element1)
-    // if ((this.element1 = "blank")) this.setState({ element1: "Fire" })
-    // else( this.setState({ element2: "Fire" }));
-  };
+  setFireMana = () => {
+    if (this.state.element1 == "blank") {
+      this.setState({ element1: "FireElement" });
+    } else {
+      this.setState({ element2: "fire" });
+    }
+  }
 
   setWaterMana = () => {
-    if ((this.element1 = "blank")) this.setState({ element1: "Water" })
-    else this.setState({ element2: "Water" });
+    if (this.state.element1 == "blank") {
+      this.setState({ element1: "Water" });
+    } else {
+      this.setState({ element2: "water" });
+    }
   };
 
   setAirMana = () => {
-    if ((this.element1 = "blank")) this.setState({ element1: "Air" })
-    else this.setState({ element2: "Air" });
+    if (this.state.element1 == "blank") {
+      this.setState({ element1: "Air" });
+    } else {
+      this.setState({ element2: "air" });
+    }
   };
 
   setEarthMana = () => {
-    if ((this.element1 = "blank")) this.setState({ element1: "Earth" })
-    else this.setState({ element2: "Earth" });
+    if (this.state.element1 == "blank") {
+      this.setState({ element1: "Earth" });
+    } else {
+      this.setState({ element2: "earth" });
+    }
+  };
+
+  setShotForm = () => {
+    this.setState({ form: "Shot" });
+  };
+
+  setBeamForm = () => {
+    this.setState({ form: "Beam" });
+  };
+
+  setWallForm = () => {
+    this.setState({ form: "Wall" });
+  };
+
+  combineElements = () => {
+    if (this.state.element2 !== "blank") {
+      axios
+        .get(
+          `http://127.0.0.1:5000/${this.state.element1}/${this.state.element2}`
+        )
+        .then((response) => console.log(response));
+    }
+  };
+
+  componentDidUpdate() {
+    this.combineElements();
+  }
+
+  clearSpellForm = () => {
+    {
+      this.setState({ element1: "blank" });
+    }
+    {
+      this.setState({ element2: "blank" });
+    }
+    {
+      this.setState({ form: "blank" });
+    }
   };
 
   render() {
@@ -58,6 +115,9 @@ export default class Hud extends Component {
           </div>
           <div className="foreground">
             <div>{this.state.element1}</div>
+            <div>{this.state.element2}</div>
+            <div>{this.state.combinedElement}</div>
+            <div>{this.state.form}</div>
           </div>
         </div>
         <div className="hud">
@@ -65,28 +125,28 @@ export default class Hud extends Component {
             <button onClick={this.setFireMana}>
               <img src={fireicon} />
             </button>
-            <button>
+            <button onClick={this.setWaterMana}>
               <img src={watericon} />
             </button>
-            <button>
+            <button onClick={this.setAirMana}>
               <img src={airicon} />
             </button>
-            <button>
+            <button onClick={this.setEarthMana}>
               <img src={earthicon} />
             </button>
           </div>
           <div className="form">
-            <button>
-              <Shot />
+            <button onClick={this.setShotForm}>
+              <img src={shot} />
             </button>
-            <button>
-              <Beam />
+            <button onClick={this.setBeamForm}>
+              <img src={beam} />
             </button>
-            <button>
-              <Wall />
+            <button onClick={this.setWallForm}>
+              <img src={wall} />
             </button>
-            <button>
-              <Clear />
+            <button onClick={this.clearSpellForm}>
+              <img src={clear} />
             </button>
           </div>
         </div>
