@@ -25,7 +25,7 @@ export default function addElement() {
   const postElement = (event) => {
     axios
       .post(
-        "http://localhost:5000/add-Elements",
+        "http://127.0.0.1:5000/add-element",
         {
           Main: Main,
           Fire: Fire,
@@ -34,9 +34,8 @@ export default function addElement() {
           Earth: Earth,
         },
         {
-            headers: { "Access-Control-Allow-Origin": "*" },
-          }
-      )
+            Headers: { "Access-Control-Allow-Origin": "*" }
+          })
       .then((response) => console.log(response))
       .catch((error) => console.error(error));
     clearState();

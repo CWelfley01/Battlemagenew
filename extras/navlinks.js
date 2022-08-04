@@ -43,3 +43,8 @@
           <Route path="/add-EarthElement">
             <AddEarthElement />
           </Route>
+
+
+{
+  Headers: { "Access-Control-Allow-Origin": "*" },
+}

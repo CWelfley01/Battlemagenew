@@ -34,7 +34,7 @@ function main() {
           <Route path="/add-spell">
             <AddSpell />
           </Route>
-          <Route path="/add-Elements">
+          <Route path="/add-element">
             <AddElement />
           </Route>
           <Route path="/add-FormElement">

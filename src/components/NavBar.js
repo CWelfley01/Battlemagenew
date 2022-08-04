@@ -18,7 +18,7 @@ export default function NavBar() {
         <NavLink
           className="navbar-link"
           activeClassName="selected"
-          to="/add-Elements"
+          to="/add-element"
         >
           Add Element
         </NavLink>

@@ -41,7 +41,7 @@ spell_schema = SpellSchema()
 spells_schema = SpellSchema(many=True)
 
 # Element Table
-class Elements(db.Model):
+class Element(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     Main = db.Column(db.String, nullable=False)
     Fire = db.Column(db.String, nullable=False)
@@ -106,8 +106,8 @@ def add_spell():
 
     return jsonify(spell_schema.dump(record))
 
-@app.route("/add-Elements", methods=["POST"])
-def add_Elements():
+@app.route("/add-element", methods=["POST"])
+def add_element():
     Main = request.json.get("Main")
     Fire = request.json.get("Fire")
     Water = request.json.get("Water")
@@ -116,7 +116,7 @@ def add_Elements():
     
     
 
-    record = Elements(Main, Fire, Water, Air, Earth)
+    record = Element(Main, Fire, Water, Air, Earth)
     
     db.session.add(record)
     db.session.commit()
@@ -140,19 +140,19 @@ def add_FormElement():
     db.session.add(record)
     db.session.commit()
 
-    return jsonify(formelement_schema.dump(record))
+    return jsonify(FormElement_schema.dump(record))
 
-@app.route("/<table>/<row>/<column>", methods=["GET"])
+@app.route("/element/<row>/<column>", methods=["GET"])
 def get_an_element(table, row, column):
     main_element = db.query.get(table)
     second_element = table.query.get(row)
     combined_element = row.query.get(column) 
     return element_schema.jsonify(combined_element)
 
-@app.route("/Elements", methods=["GET"])
-def get_all_elements():
-    all_elements = Elements.query.all()
-    return jsonify(element_schema.dump(all_elements))
+@app.route("/element", methods=["GET"])
+def get_all_element():
+    all_element = Element.query.all()
+    return jsonify(element_schema.dump(all_element))
     
     
 @app.route("/spells", methods=["GET"])
@@ -196,14 +196,14 @@ def spell_id(id):
     elif request.method == "GET":
         return spell_schema.jsonify(spell)
     
-@app.route("/Elements/<id>", methods=["DELETE","GET","PUT"])
-def Element_id(id):
-    Element = Elements.query.get(id)
+@app.route("/element/<id>", methods=["DELETE","GET","PUT"])
+def element_id(id):
+    element = Element.query.get(id)
     if request.method == "DELETE":
-        db.session.delete(Element)
+        db.session.delete(element)
         db.session.commit()
     
-        return Element_schema.jsonify(Elements)
+        return element_schema.jsonify(element)
     elif request.method == "PUT":
         Main = request.json['Main']
         Fire = request.json['Fire']
@@ -212,16 +212,16 @@ def Element_id(id):
         Earth = request.json['Earth']
        
 
-        Elements.Main = Main
-        Elements.Fire = Fire
-        Elements.Water = Water
-        Elements.Air = Air
-        Elements.Earth = Earth
+        element.Main = Main
+        element.Fire = Fire
+        element.Water = Water
+        element.Air = Air
+        element.Earth = Earth
 
         db.session.commit()
-        return element_schema.jsonify(Elements)
+        return element_schema.jsonify(element)
     elif request.method == "GET":
-        return element_schema.jsonify(Elements)
+        return element_schema.jsonify(element)
     
 
 

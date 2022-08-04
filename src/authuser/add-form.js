@@ -18,7 +18,7 @@ export default function addFormElement() {
 
   const postFormElement = (event) => {
     axios
-      .post("http://localhost:5000/add-FormElement", {
+      .post("http://127.0.0.1:5000/add-FormElement", {
         element: element,
         shot: shot,
         beam: beam,
