@@ -57,7 +57,7 @@ export default class Hud extends Component {
             {/* <img src={PoweredScroll} className="live" /> */}
           </div>
           <div className="foreground">
-            <div>{}</div>
+            <div>{this.state.element1}</div>
           </div>
         </div>
         <div className="hud">
