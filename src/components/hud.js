@@ -23,6 +23,7 @@ export default class Hud extends Component {
       element2: "blank",
       combinedElement: "blank",
       form: "blank",
+      spell: "blank",
     };
 
     this.setFireMana = this.setFireMana.bind(this);
@@ -47,7 +48,7 @@ export default class Hud extends Component {
     if (this.state.element1 == "blank") {
       this.setState({ element1: "Water" });
     } else {
-      this.setState({ element2: "water" });
+      this.setState({ element2: "Water" });
     }
   };
 
@@ -55,7 +56,7 @@ export default class Hud extends Component {
     if (this.state.element1 == "blank") {
       this.setState({ element1: "Air" });
     } else {
-      this.setState({ element2: "air" });
+      this.setState({ element2: "Air" });
     }
   };
 
@@ -63,12 +64,13 @@ export default class Hud extends Component {
     if (this.state.element1 == "blank") {
       this.setState({ element1: "Earth" });
     } else {
-      this.setState({ element2: "earth" });
+      this.setState({ element2: "Earth" });
     }
   };
 
   setShotForm = () => {
     this.setState({ form: "Shot" });
+
   };
 
   setBeamForm = () => {
@@ -114,10 +116,14 @@ export default class Hud extends Component {
             {/* <img src={PoweredScroll} className="live" /> */}
           </div>
           <div className="foreground">
-            <div className="left-side live">{this.state.element1}</div>
-            <div className="right-side dead">{this.state.element2}</div>
-            <div className="left-side dead">{this.state.combinedElement}</div>
-            <div className="right-side live">{this.state.form}</div>
+            <div className="left-side">
+              <div className="live">{this.state.element1}</div>
+              <div className="dead">{this.state.combinedElement}</div>
+            </div>
+            <div className="right-side">
+              <div className="live">{this.state.element2}</div>
+              <div className="dead">{this.state.form}</div>
+            </div>
           </div>
         </div>
         <div className="hud">
