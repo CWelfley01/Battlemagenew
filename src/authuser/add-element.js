@@ -43,6 +43,8 @@ export default function addElement() {
     event.preventDefault();
   };
 
+  
+
   return (
     <div className="add-spell">
       <img className="banner" src={Banner} />
