@@ -3,16 +3,38 @@
   grid-template-columns: 1fr 1fr;
 
   .spellform {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+
     .background {
       height: 1000px;
-      
 
       img {
         height: 1000px;
       }
     }
     .foreground {
-      
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      z-index: 10;
+      margin-top: 475px;
+      font-size: 50px;
+      .left-side {
+        margin-left: 275px;
+      }
+      .right-side{
+        margin-left: 330px;
+      }
+      .live {
+        visibility: visible;
+      }
+      .dead {
+        visibility: hidden;
+      }
     }
   }
 
@@ -29,7 +51,7 @@
         width: 190px;
       }
     }
-    .form{
+    .form {
       display: grid;
       height: 200px;
       width: 190px;
@@ -37,7 +59,6 @@
         height: 200px;
         width: 190px;
       }
-
     }
   }
 }

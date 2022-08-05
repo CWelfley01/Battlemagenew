@@ -142,11 +142,11 @@ def add_FormElement():
 
     return jsonify(FormElement_schema.dump(record))
 
-@app.route("/Element/<row>/<column>", methods=["GET"])
-def get_an_element(row, column):
-    second_element = Element.query.get(row)
-    combined_element = row.query.get(column) 
-    return jsonify(element_schema(combined_element))
+# @app.route("/Element/<row>/<column>", methods=["GET"])
+# def get_an_element(row, column):
+#     second_element = Element.query.get(row)
+#     combined_element = row.query.get(column) 
+#     return jsonify(element_schema(combined_element))
 
 @app.route("/Element", methods=["GET"])
 def get_all_elements():

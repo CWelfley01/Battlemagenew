@@ -114,10 +114,10 @@ export default class Hud extends Component {
             {/* <img src={PoweredScroll} className="live" /> */}
           </div>
           <div className="foreground">
-            <div>{this.state.element1}</div>
-            <div>{this.state.element2}</div>
-            <div>{this.state.combinedElement}</div>
-            <div>{this.state.form}</div>
+            <div className="left-side live">{this.state.element1}</div>
+            <div className="right-side dead">{this.state.element2}</div>
+            <div className="left-side dead">{this.state.combinedElement}</div>
+            <div className="right-side live">{this.state.form}</div>
           </div>
         </div>
         <div className="hud">
