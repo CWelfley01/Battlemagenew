@@ -7,16 +7,15 @@ export default class GetElements extends Component {
 
     this.listElements = this.listElements.bind(this);
   }
-  listElements = (event) => {
+  listElements = () => {
     axios
-      .get("http://127.0.0.1:5000/element")
-      .then((response) => console.log(response.data.json))
-      .catch((error) => console.error(error.response.data));
-    // event.preventDefault();
-  };
+      .get("http://127.0.0.1:5000/Element")
+      .then((response) => console.log(response.data[0]))
+      .catch((error) => console.error(error))
+    };
   render() {
-    this.listElements();
+    
 
-    return <div></div>;
+    return <div>{this.listElements()}</div>;
   }
 }

@@ -5,6 +5,8 @@ import Banner from "../../static/assets/images/fire-banner.png";
 import NavBar from "../components/NavBar";
 import GetElements from "../components/get-elements";
 
+import styles from "../style/lists.scss";
+
 export default function addElement() {
   const [Main, setMain] = useState("");
   const [Fire, setFire] = useState("");
@@ -20,8 +22,6 @@ export default function addElement() {
     setEarth("");
   };
 
-
-
   const postElement = (event) => {
     axios
       .post(
@@ -34,8 +34,9 @@ export default function addElement() {
           Earth: Earth,
         },
         {
-            Headers: { "Access-Control-Allow-Origin": "*" }
-          })
+          Headers: { "Access-Control-Allow-Origin": "*" },
+        }
+      )
       .then((response) => console.log(response))
       .catch((error) => console.error(error));
     clearState();
@@ -86,11 +87,11 @@ export default function addElement() {
             />
             <button className="add-spell-form-button">Add element!</button>
           </form>
-          
         </div>
       </div>
-      <GetElements />
+      <div className="element-list">
+        <GetElements />
+      </div>
     </div>
-    
   );
 }
