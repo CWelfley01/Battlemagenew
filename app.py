@@ -147,13 +147,13 @@ def add_FormElement():
 
 @app.route("/Element")
 def get_all_elements():
-    all_elements = Element.query.order_by(Element).all()
+    all_elements = Element.query.all()
     return jsonify(elements_schema.dump(all_elements))
 
-@app.route("/Element/")
-def get_element1(element1):
-    element1 = request.args.get('http://127.0.0.1:3000/hud.js/{this.state.element1}')
-    return jsonify(elements_schema.dump(element1))
+# @app.route("/Element/")
+# def get_element1(element1):
+#     element1 = request.args.get('http://127.0.0.1:3000/hud.js/{this.state.element1}')
+#     return jsonify(elements_schema.dump(element1))
 
 # @app.route("/Element/{get_element1}/<element2>")
 # def get_element2(element2):
