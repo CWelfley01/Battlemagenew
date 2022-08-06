@@ -85,7 +85,7 @@ export default class Hud extends Component {
     if (this.state.element2 !== "blank") {
       axios
         .get(
-          `http://127.0.0.1:5000/${this.state.element1}/${this.state.element2}`
+          `http://127.0.0.1:5000/Element/${this.state.element1}/${this.state.element2}`
         )
         .then((response) => console.log(response));
     }
